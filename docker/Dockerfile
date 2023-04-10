@@ -31,11 +31,12 @@ RUN echo "conda activate skyseg" >> ~/.bashrc
 
 # Install PyTorch and MMSegmentation
 RUN /bin/bash -c "source activate skyseg && \
-    conda install cudatoolkit=11.3 pytorch=*=*cuda* -c pytorch -y && \
+    conda install cudatoolkit=11.3 pytorch=*=*cuda* -c pytorch tqdm -y && \
     pip install openmim && \
     mim install mmengine && \
     mim install \"mmcv>=2.0.0\" && \
-    pip install git+https://github.com/open-mmlab/mmsegmentation.git"
+    pip install git+https://github.com/open-mmlab/mmsegmentation.git && \
+    mim install mmdeploy"
 
 # Clone the project code 
 WORKDIR /
