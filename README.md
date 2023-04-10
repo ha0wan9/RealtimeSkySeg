@@ -39,7 +39,7 @@ To train the model with our SkyCityscapes dataset, run the following command:
 ```
 python tools/train_segmentor.py models/bisenetv2_fcn_4x4_skycityscape_1024x1024.py --work-dir checkpoints/bisenetv2_skycityscapes --amp
 ```
-The current configuration trains the model for 2000 iterations by default, with a starting learning rate of 0.01. More details can be found in the [config file](models/bisenetv2_fcn_4x4_skycityscape_1024x1024.py).
+The current configuration fine tune the pre-trained model for 2000 iterations by default, with a starting learning rate of 0.01. More details can be found in the [config file](models/bisenetv2_fcn_4x4_skycityscape_1024x1024.py).
 
 Current training results:
 | model   |  dataset   | sky test IoU  | sky test accuracy
