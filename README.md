@@ -22,7 +22,7 @@ RealtimeSkySeg
 │   │   │   │   ├── train
 │   │   │   │   ├── val
 ```
-Images and annotations should be preprocessed using the [cityscapes_formating.py](tools/cityscape_formating.py) script, which reduces the labels to two classes: `not_sky` and `sky`.
+Images and annotations should be preprocessed using the [cityscapes_formater.py](tools/cityscape_formater.py) script, which reduces the labels to two classes: `not_sky` and `sky`.
 
 The newly formated dataset [SkyCityscapes](data/configs/SkyCityscapesDataset.py) is defined as a custom dataset in MMSegmentation.
 
