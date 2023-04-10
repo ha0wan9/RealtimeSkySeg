@@ -197,8 +197,8 @@ tta_pipeline = [
                     }]])
 ]
 train_dataloader = dict(
-    batch_size=6,
-    num_workers=8,
+    batch_size=4,
+    num_workers=4,
     persistent_workers=True,
     sampler=dict(type='InfiniteSampler', shuffle=True),
     dataset=dict(
@@ -222,7 +222,7 @@ train_dataloader = dict(
         ]))
 val_dataloader = dict(
     batch_size=1,
-    num_workers=8,
+    num_workers=4,
     persistent_workers=True,
     sampler=dict(type='DefaultSampler', shuffle=False),
     dataset=dict(
@@ -238,7 +238,7 @@ val_dataloader = dict(
         ]))
 test_dataloader = dict(
     batch_size=1,
-    num_workers=8,
+    num_workers=4,
     persistent_workers=True,
     sampler=dict(type='DefaultSampler', shuffle=False),
     dataset=dict(
@@ -269,11 +269,13 @@ log_level = 'INFO'
 load_from = None
 resume = False
 tta_model = dict(type='SegTTAModel')
+lr_conifg = dict(warmup='linear', warmup_iters=100)
 optimizer = dict(type='SGD', lr=0.01, momentum=0.9, weight_decay=0.0005)
 optim_wrapper = dict(
-    type='OptimWrapper',
+    type='AmpOptimWrapper',
     optimizer=dict(type='SGD', lr=0.01, momentum=0.9, weight_decay=0.0005),
-    clip_grad=None)
+    clip_grad=None,
+    loss_scale='dynamic')
 param_scheduler = [
     dict(type='LinearLR', by_epoch=False, start_factor=0.1, begin=0, end=1000),
     dict(
@@ -284,7 +286,7 @@ param_scheduler = [
         end=160000,
         by_epoch=False)
 ]
-train_cfg = dict(type='IterBasedTrainLoop', max_iters=1000, val_interval=100)
+train_cfg = dict(type='IterBasedTrainLoop', max_iters=2000, val_interval=100)
 val_cfg = dict(type='ValLoop')
 test_cfg = dict(type='TestLoop')
 default_hooks = dict(
