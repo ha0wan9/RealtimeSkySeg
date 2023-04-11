@@ -6,7 +6,9 @@ checkpoints/*
 *.png
 *.bmp
 *.json
+*.pth
 *.pt
+*.mp4
 !demo/*.jpg
 !demo/src/*.png
 
