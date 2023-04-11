@@ -70,7 +70,7 @@ def visualize(frame, segmentation_map):
     Returns:
         numpy.ndarray: The visualization frame with the segmentation map overlaid.
     """
-    # Define a color map for each class (modify according to your classes)
+    # Define a color map for each class
     color_map = np.array([[0, 0, 0], [70, 130, 180]])
     
     # Map the segmentation map to the color map
@@ -94,7 +94,7 @@ def main(args):
     # Initialize the TensorRT backend with the exported TensorRT model
     backend = DeployBackend('tensorrt', args.model_path)
 
-    # Define the input shape for the model (modify according to your model's input shape)
+    # Define the input shape for the model
     input_shape = (1024, 1024)
 
     # Perform inference on a single image
