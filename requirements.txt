@@ -1,1 +1,4 @@
 tqdm
+nvidia-pyindex
+nvidia-tensorrt
+pycuda
