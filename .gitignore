@@ -7,6 +7,8 @@ checkpoints/*
 *.bmp
 *.json
 *.pt
+!demo/*.jpg
+!demo/src/*.png
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
