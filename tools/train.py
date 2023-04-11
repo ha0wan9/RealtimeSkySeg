@@ -1,3 +1,6 @@
+"""
+DEPRECATED: UNUSEABLE FOR THE LATEST MMSEGMENTATION 1.0.0 :(
+"""
 import os.path as osp
 import argparse
 
