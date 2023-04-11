@@ -2,6 +2,8 @@
 
 This project aims to develop a lightweight model to segment the sky in images, utilizing OpenMMLab's open-source packages.  
 
+![result image](demo/result.jpg)
+
 ## Environment & Dataset
 
 The project primarily depends on the latest versions of MMSegmentation, MMEngine, and MMDeploy. The runtime environment is based on Python 3.9, PyTorch 1.12, CUDA 11.3, etc. The [Dockerfile](docker/Dockerfile) provides a comprehensive list of packages used in this project (please note that the build and runtime of the Docker image have not been tested due to local storage limitations).
