@@ -71,7 +71,7 @@ def visualize(frame, segmentation_map):
         numpy.ndarray: The visualization frame with the segmentation map overlaid.
     """
     # Define a color map for each class (modify according to your classes)
-    color_map = np.array([[0, 0, 0], [255, 0, 0], [0, 255, 0], [0, 0, 255]])
+    color_map = np.array([[0, 0, 0], [70, 130, 180]])
     
     # Map the segmentation map to the color map
     colored_map = color_map[segmentation_map]
