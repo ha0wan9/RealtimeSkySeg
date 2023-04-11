@@ -62,4 +62,5 @@ python tools/inference_base.py --config models/bisenetv2_fcn_4x4_skycityscape_10
 These commands use the MMSegmentation APIs to perform model inference on either images or videos. The results will be saved in the specified save_dir. Note that the performance of the model may vary depending on the input data and hardware resources. 
 
 ### Real-time inference (WIP)
-For real-time applications, it's important to optimize the model further to reduce latency and improve throughput. One approach to achieve this is by converting the trained PyTorch model to ONNX and then to TensorRT.
+For real-time applications, it's important to optimize the model further to reduce latency and improve throughput. One approach to achieve this is by converting the trained PyTorch model to ONNX and then to TensorRT. In this project the model conversion is performed by the latest MMDeploy library (1.0.0).
+
