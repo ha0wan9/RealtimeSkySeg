@@ -2,6 +2,8 @@
 
 This project aims to develop a lightweight model to segment the sky in images, utilizing OpenMMLab's open-source packages.  
 
+![result image](demo/result.jpg)
+
 ## Environment & Dataset
 
 The project primarily depends on the latest versions of MMSegmentation, MMEngine, and MMDeploy. The runtime environment is based on Python 3.9, PyTorch 1.12, CUDA 11.3, etc. The [Dockerfile](docker/Dockerfile) provides a comprehensive list of packages used in this project (please note that the build and runtime of the Docker image have not been tested due to local storage limitations).
@@ -60,4 +62,5 @@ python tools/inference_base.py --config models/bisenetv2_fcn_4x4_skycityscape_10
 These commands use the MMSegmentation APIs to perform model inference on either images or videos. The results will be saved in the specified save_dir. Note that the performance of the model may vary depending on the input data and hardware resources. 
 
 ### Real-time inference (WIP)
-For real-time applications, it's important to optimize the model further to reduce latency and improve throughput. One approach to achieve this is by converting the trained PyTorch model to ONNX and then to TensorRT.
+For real-time applications, it's important to optimize the model further to reduce latency and improve throughput. One approach to achieve this is by converting the trained PyTorch model to ONNX and then to TensorRT. In this project the model conversion is performed by the latest MMDeploy library (1.0.0).
+
